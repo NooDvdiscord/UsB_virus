@@ -1,6 +1,7 @@
 @echo off
-set "server_url=http://192.168.1.10:5000/report"  :: Replace with your actual IP address
+set "server_url=http://your-ip-here:5000/report"  :: Replace with your actual IP address
 set "temp_file=%TEMP%\system_info.json"
+
 powershell -Command ^
     "$headers = @{ 'Content-Type' = 'application/json' }; " ^
     "Get-ComputerInfo | ConvertTo-Json | Out-File -FilePath '%temp_file%'; " ^
